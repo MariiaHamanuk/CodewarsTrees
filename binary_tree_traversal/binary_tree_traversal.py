@@ -1,13 +1,28 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
 # Pre-order traversal
 def pre_order(node):
-    lst  = []
-    if node:
-        lst.append(node.data)
-        pre_order(node.left)
-        pre_order(node.right)
-        
+    lst = []
+    def real_pre_recurs(node):
+        if node:
+            lst.append(node.data)
+            real_pre_recurs(node.left)
+            real_pre_recurs(node.right)
+    real_pre_recurs(node)
+    
     return lst
-
+    
+a = Node(5)
+b = Node(10)
+c = Node(2)
+d = Node("leaf")
+a.left = b
+a.right = c
+c.left = d
+print(pre_order(a))
 # In-order traversal
 def in_order(node):
     return []
