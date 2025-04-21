@@ -25,8 +25,16 @@ c.left = d
 print(pre_order(a))
 # In-order traversal
 def in_order(node):
-    return []
+    lst = []
+    def real_in_recurs(node):
+        if node:
+            real_in_recurs(node.left)
+            lst.append(node.data)
 
+            real_in_recurs(node.right)
+    real_in_recurs(node)
+    
+    return lst
 # Post-order traversal
 def post_order(node):
     return []
