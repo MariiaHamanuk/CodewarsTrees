@@ -37,5 +37,15 @@ def in_order(node):
     return lst
 # Post-order traversal
 def post_order(node):
-    return []
+    lst = []
+    def real_post_recurs(node):
+        if node:
+            real_post_recurs(node.left)
+            real_post_recurs(node.right)
+            lst.append(node.data)
+
+
+    real_post_recurs(node)
+    
+    return lst
 
