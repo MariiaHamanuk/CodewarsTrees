@@ -75,14 +75,25 @@ def in_order(node):
 # # Post-order traversal
 def post_order(node):
     lst = []
-    def real_post_recurs(node):
-        if node:
-            real_post_recurs(node.left)
-            real_post_recurs(node.right)
+    if node:
+        stack = deque([node])
+        while stack:
+            if stack:
+                node = stack.pop()
             lst.append(node.data)
 
-
-    real_post_recurs(node)
-    
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+    lst = lst[::-1]
     return lst
-
+a = Node(5)
+b = Node(10)
+c = Node(2)
+d = Node("leaf")
+a.left = b
+a.right = c
+c.left = d
+print(post_order(a))
+# Post-order traversal
