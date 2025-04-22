@@ -12,8 +12,7 @@ def tree_by_levels(node):
         q = deque([node])
         while q:
             curr = q.popleft()
-            if curr:
-                lst.append(curr.value)
+            lst.append(curr.value)
             # def recursion(node):
             #     if not node.value in lst:
             #         lst.append(node.value)
@@ -22,12 +21,12 @@ def tree_by_levels(node):
             #     if node.right and not node.right.value in lst:
             #         lst.append(node.right.value)
 
-                if curr.left:
-                    q.append(curr.left)
-                if node.right:
-                    q.append(curr.right)
+            if curr.left:
+                q.append(curr.left)
+            if curr.right:
+                q.append(curr.right)
 
         # recursion(node)
     return lst
 
-print(tree_by_levels(Node(Node(None, Node(None, None, 4), 2), Node(Node(None, None, 5), Node(None, None, 6), 3), 1)))
+# print(tree_by_levels(Node(Node(None, Node(None, None, 4), 2), Node(Node(None, None, 5), Node(None, None, 6), 3), 1)))
