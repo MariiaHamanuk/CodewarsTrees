@@ -1,9 +1,9 @@
 from collections import deque
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left = None
+#         self.right = None
 # Pre-order traversal
 def pre_order(node):
 
@@ -88,12 +88,12 @@ def post_order(node):
                 stack.append(node.right)
     lst = lst[::-1]
     return lst
-a = Node(5)
-b = Node(10)
-c = Node(2)
-d = Node("leaf")
-a.left = b
-a.right = c
-c.left = d
-print(post_order(a))
+# a = Node(5)
+# b = Node(10)
+# c = Node(2)
+# d = Node("leaf")
+# a.left = b
+# a.right = c
+# c.left = d
+# print(post_order(a))
 # Post-order traversal
