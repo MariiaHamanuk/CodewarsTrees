@@ -5,6 +5,7 @@ class Node:
         self.right = R
         self.value = n
 
+
 def tree_by_levels(node):
     lst = []
     
